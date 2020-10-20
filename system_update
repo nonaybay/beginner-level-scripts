@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+
+import os
+import time
+
+
+def run(code):
+    os.system('clear')
+    os.system('sudo {}'.format(code))
+    time.sleep(1)
+
+
+run('apt-get update')
+run('apt-get install -y -f')
+run('apt-get upgrade -y -f')
+run('apt-get full-upgrade -y -f')
+run('apt-get dist-upgrade -y -f')
+run('apt-get autoremove -y')
+run('apt-get clean -y')
