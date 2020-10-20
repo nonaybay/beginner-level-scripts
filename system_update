@@ -6,6 +6,10 @@ import time
 
 def run(code):
     os.system('clear')
+    print('-' * 64)
+    print('+ Executando: sudo {}'.format(code))
+    print('-' * 64)
+    time.sleep(1)
     os.system('sudo {}'.format(code))
     time.sleep(1)
 
@@ -17,3 +21,6 @@ run('apt-get full-upgrade -y -f')
 run('apt-get dist-upgrade -y -f')
 run('apt-get autoremove -y')
 run('apt-get clean -y')
+
+os.system('clear')
+
