@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+
+import os
+
+
+print('-' * 64)
+print('+ Precisa adicionar uma conta root?')
+print('-' * 64)
+answer = input('[s/n] >: ')
+print('-' * 64)
+
+def run(code):
+    os.system('python3 manage.py {}'.format(code))
+
+run('makemigrations')
+run('migrate --run-syncdb')
+
+if answer == 's':
+    run('createsuperuser')
+
+run('makemigrations')
+run('migrate')
+run('runserver')
+
